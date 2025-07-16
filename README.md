@@ -1,4 +1,5 @@
 __📝 To Do List Application__
+
 - A simple and interactive web-based To Do List application with dark mode toggling, built using HTML, CSS, and JavaScript.
 
 __✨ Features:__
@@ -35,6 +36,10 @@ __🚀 How to Use:__
 
 - Click the "Toggle Dark Mode" button to switch between light and dark themes. Your theme preference will be saved.
 
+__🌐 Live Demo:__
+
+- https://faran-inam.github.io/To-Do-List/
+
 __📄 License:__
 
 - This project is open-source and uses the MIT License.
@@ -43,8 +48,9 @@ __📄 License:__
 
 __📧 Let's Connect:__
 
+- Got questions or just want to chat about coding? Feel free to reach out!
+
 - Name: Faran Inam
 
 - Email: faraninam.18@gmail.com
 
-- Live Demo: 
