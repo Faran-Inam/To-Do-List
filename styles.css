@@ -1,0 +1,215 @@
+/* Default (Light Theme) Variables */
+:root {
+    --body-bg: #ffffff;
+    --todo-container-bg: #dbdbdb;
+    --h1-color: #333;
+    --input-border-color: #ddd;
+    --input-focus-border-color: #007bff;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --button-text-color: white;
+    --todo-item-bg: #f8f9fa;
+    --todo-item-hover-bg: #e9ecef;
+    --todo-item-border-left: #007bff;
+    --todo-item-completed-border-left: #28a745;
+    --delete-btn-bg: #dc3545;
+    --delete-btn-hover-bg: #c82333;
+    --empty-state-color: #6c757d;
+    --theme-toggle-bg: #6c757d;
+    --theme-toggle-hover-bg: #5a6268;
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --body-bg: #2c2c2c; /* Darker background */
+    --todo-container-bg: #444444; /* Darker container */
+    --h1-color: #f0f0f0; /* Light text for headings */
+    --input-border-color: #555;
+    --input-focus-border-color: #66b3ff;
+    --button-bg: #4CAF50; /* Green for add button */
+    --button-hover-bg: #45a049;
+    --button-text-color: white;
+    --todo-item-bg: #555555; /* Darker todo item background */
+    --todo-item-hover-bg: #666666;
+    --todo-item-border-left: #4CAF50; /* Green border for active tasks */
+    --todo-item-completed-border-left: #77c27a; /* Lighter green for completed */
+    --delete-btn-bg: #e74c3c; /* Red for delete button */
+    --delete-btn-hover-bg: #c0392b;
+    --empty-state-color: #bbb;
+    --theme-toggle-bg: #007bff; /* Blue for toggle button */
+    --theme-toggle-hover-bg: #0056b3;
+}
+
+
+/* General Styling - Use variables */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: var(--body-bg); /* Use variable for theme support */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.todo-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--todo-container-bg); /* Use variable for theme support */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--h1-color); /* Use variable */
+    margin-bottom: 30px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.input-section input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-section button {
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-section button:active {
+    background: #0056b3;
+}
+
+button {
+    padding: 12px 20px;
+    background: var(--button-bg); /* Use variable */
+    color: var(--button-text-color); /* Use variable */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: var(--button-hover-bg); /* Use variable */
+}
+
+.todo-item {
+    background: var(--todo-item-bg); /* Use variable */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--todo-item-border-left); /* Use variable */
+    transition: all 0.3s;
+    color: var(--h1-color); /* Ensure todo text is readable */
+}
+
+.todo-item:hover {
+    background: var(--todo-item-hover-bg); /* Use variable */
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    border-left-color: var(--todo-item-completed-border-left); /* Use variable */
+}
+
+.todo-text {
+    cursor: pointer;
+    flex: 1;
+    font-size: 16px;
+    user-select: none;
+}
+
+.delete-btn {
+    background: var(--delete-btn-bg); /* Use variable */
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background: var(--delete-btn-hover-bg); /* Use variable */
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--empty-state-color); /* Use variable */
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* New: Theme Toggle Button Specific Style */
+.theme-toggle-btn {
+    display: block;
+    margin: 0 auto 20px auto; /* Center the button and add space below */
+    background-color: var(--theme-toggle-bg);
+    color: var(--button-text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--theme-toggle-hover-bg);
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 8px;
+        /* Prevent horizontal scroll */
+        overflow-x: hidden;
+    }
+    .todo-container {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 10px 4px;
+    }
+    .input-section {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .input-section button,
+    .input-section input[type="text"] {
+        width: 100%;
+        font-size: 1.1rem;
+        min-height: 44px; /* Easier tap targets */
+        box-sizing: border-box;
+    }
+    button,
+    .theme-toggle-btn {
+        font-size: 1rem;
+        min-height: 44px;
+    }
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+    .todo-item {
+        font-size: 1rem;
+        padding: 12px 8px;
+    }
+}
